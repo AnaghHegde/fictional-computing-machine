@@ -25,30 +25,12 @@
   "editModeTheme": {
     "name": "Classic",
     "isSystemTheme": true,
-    "deleted": false,
-    "policies": [
-      {
-        "permission": "read:themes",
-        "users": [
-          "anonymousUser"
-        ],
-        "groups": []
-      }
-    ]
+    "deleted": false
   },
   "publishedTheme": {
     "name": "Classic",
     "isSystemTheme": true,
-    "deleted": false,
-    "policies": [
-      {
-        "permission": "read:themes",
-        "users": [
-          "anonymousUser"
-        ],
-        "groups": []
-      }
-    ]
+    "deleted": false
   },
   "publishedLayoutmongoEscapedWidgets": {
     "Movies": [
