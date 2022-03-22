@@ -18,23 +18,42 @@
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "formData": {
-        "updateMany": {
-          "limit": "SINGLE"
-        },
         "find": {
-          "query": "{ homepage: /{{data_table.searchText||\"\"}}/i }",
-          "limit": "{{data_table.pageSize}}",
-          "skip": "{{(data_table.pageNo - 1) * data_table.pageSize}}",
-          "sort": "{ \n{{key_select.selectedOptionValue}}: {{order_select.selectedOptionValue}} \n}"
+          "query": {
+            "data": "{ homepage: /{{data_table.searchText||\"\"}}/i }",
+            "viewType": "component",
+            "componentData": "{ homepage: /{{data_table.searchText||\"\"}}/i }"
+          },
+          "limit": {
+            "data": "{{data_table.pageSize}}",
+            "viewType": "component",
+            "componentData": "{{data_table.pageSize}}"
+          },
+          "skip": {
+            "data": "{{(data_table.pageNo - 1) * data_table.pageSize}}",
+            "viewType": "component",
+            "componentData": "{{(data_table.pageNo - 1) * data_table.pageSize}}"
+          },
+          "sort": {
+            "data": "{ \n{{key_select.selectedOptionValue}}: {{order_select.selectedOptionValue}} \n}",
+            "viewType": "component",
+            "componentData": "{ \n{{key_select.selectedOptionValue}}: {{order_select.selectedOptionValue}} \n}"
+          }
         },
-        "collection": "movies",
-        "delete": {
-          "limit": "SINGLE"
+        "collection": {
+          "data": "movies",
+          "viewType": "component",
+          "componentData": "movies"
         },
-        "command": "FIND",
-        "smartSubstitution": false,
-        "aggregate": {
-          "limit": "101"
+        "command": {
+          "data": "FIND",
+          "viewType": "component",
+          "componentData": "FIND"
+        },
+        "smartSubstitution": {
+          "data": false,
+          "viewType": "component",
+          "componentData": false
         }
       }
     },

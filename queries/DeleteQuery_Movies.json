@@ -19,18 +19,32 @@
       "path": "template_table/{{data_table.selectedRow._ref}}",
       "encodeParamsToggle": true,
       "formData": {
-        "updateMany": {
-          "limit": "SINGLE"
+        "collection": {
+          "data": "movies",
+          "viewType": "component",
+          "componentData": "movies"
         },
-        "collection": "movies",
         "delete": {
-          "query": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }",
-          "limit": "SINGLE"
+          "query": {
+            "data": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }",
+            "viewType": "component",
+            "componentData": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }"
+          },
+          "limit": {
+            "data": "SINGLE",
+            "viewType": "component",
+            "componentData": "SINGLE"
+          }
         },
-        "command": "DELETE",
-        "smartSubstitution": true,
-        "aggregate": {
-          "limit": "101"
+        "command": {
+          "data": "DELETE",
+          "viewType": "component",
+          "componentData": "DELETE"
+        },
+        "smartSubstitution": {
+          "data": true,
+          "viewType": "component",
+          "componentData": true
         }
       }
     },

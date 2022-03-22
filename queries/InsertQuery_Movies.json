@@ -18,20 +18,27 @@
       "paginationType": "NONE",
       "encodeParamsToggle": true,
       "formData": {
-        "updateMany": {
-          "limit": "SINGLE"
-        },
         "insert": {
-          "documents": "{\n \"genres\": {{insert_col_input1.text}}, \n \"homepage\": {{insert_col_input2.text}}, \n \"imdb_id\": {{insert_col_input3.text}}, \n \"poster_path\": {{insert_col_input4.text}}\n}"
+          "documents": {
+            "data": "{\n \"genres\": {{insert_col_input1.text}}, \n \"homepage\": {{insert_col_input2.text}}, \n \"imdb_id\": {{insert_col_input3.text}}, \n \"poster_path\": {{insert_col_input4.text}}\n}",
+            "viewType": "component",
+            "componentData": "{\n \"genres\": {{insert_col_input1.text}}, \n \"homepage\": {{insert_col_input2.text}}, \n \"imdb_id\": {{insert_col_input3.text}}, \n \"poster_path\": {{insert_col_input4.text}}\n}"
+          }
         },
-        "collection": "movies",
-        "delete": {
-          "limit": "SINGLE"
+        "collection": {
+          "data": "movies",
+          "viewType": "component",
+          "componentData": "movies"
         },
-        "command": "INSERT",
-        "smartSubstitution": true,
-        "aggregate": {
-          "limit": "101"
+        "command": {
+          "data": "INSERT",
+          "viewType": "component",
+          "componentData": "INSERT"
+        },
+        "smartSubstitution": {
+          "data": true,
+          "viewType": "component",
+          "componentData": true
         }
       }
     },
